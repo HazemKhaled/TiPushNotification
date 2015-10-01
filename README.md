@@ -9,7 +9,7 @@ Download the latest distribution ZIP-file and consult the [Titanium Documentatio
 ## Prepare
 Titanium has APIs for iOS push notifications, but unfortunately you need module to for Android.
 
-1- Install GCM module by [Jeroen van Vianen](https://github.com/morinel/nl.vanvianen.android.gcm)
+1- Install GCM module by [Jeroen van Vianen](https://github.com/morinel/gcmpush)
 
 `$ gittio install nl.vanvianen.android.gcm`
 
