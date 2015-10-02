@@ -1,7 +1,7 @@
 # TiPushNotification
 Yes you can use it with your self-hosted server or any other cloud services like Parse.com or Appcelerator cloud.
 
-## Get it [![gitTio](http://gitt.io/badge.svg)](http://gitt.io/component/dk.napp.drawer)
+## Get it [![gitTio](http://gitt.io/badge.svg)](http://gitt.io/component/TiPushNotification)
 Download the latest distribution ZIP-file and consult the [Titanium Documentation](http://docs.appcelerator.com/titanium/latest/#!/guide/Using_a_Module) on how install it, or simply use the [gitTio CLI](http://gitt.io/cli):
 
 `$ gittio install TiPushNotification`
@@ -98,6 +98,14 @@ tiPush.registerDevice({
 
 ### Contributions
 Your issues and pull requests are most welcome.
+
+### TODOs
+1. Server-side snippets for PHP and NodeJS
+1. Parse.com example
+1. Wordpress self-hosted example
+1. APN Server API setup tutorial
+1. GCM Server API setup tutorial
+1. Add option to depend on [CaffeinaLab GCM](https://github.com/CaffeinaLab/GCM) or [Jeroen GCM](https://github.com/morinel/gcmpush) module.
 
 ### Credits
 This module is based on [ACS Push Notifications](https://github.com/ricardoalcocer/acspushmod) CommonJS module by my Ricardo Alcocer.
