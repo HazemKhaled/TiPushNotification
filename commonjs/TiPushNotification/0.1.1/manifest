@@ -1,0 +1,10 @@
+version: 0.1.1
+description: Titanium push notification module
+author: Hazem Khaled <Hazem.Khaled@gmail.com>
+license: MIT
+copyright: Copyright © 2015 Rize Innovations
+name: TiPushNotification
+moduleid: TiPushNotification
+guid: 946f6eea-6afd-0508-0954-554899
+platform: commonjs
+minsdk: 4.1.0.GA
