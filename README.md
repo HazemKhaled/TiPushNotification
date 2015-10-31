@@ -77,13 +77,10 @@ if (Ti.Platform.name === 'android') {
 // set cross-platform event
 var onReceive = function(event) {
   // Your code here
-}
+};
 
-// load library
-var TiPushFactory = require('TiPushNotification');
-
-// create instance with your own or the user's username and password
-var tiPush = new TiPushFactory.TiPush({
+// Create instance with base url
+var tiPush = require('ti-push-notification').init({
   backendUrl: "http://domain.tld/register.php"
 });
 
@@ -101,11 +98,14 @@ Your issues and pull requests are most welcome.
 
 ### TODOs
 1. Server-side snippets for PHP and NodeJS
-1. Parse.com example
-1. Wordpress self-hosted example
-1. APN Server API setup tutorial
-1. GCM Server API setup tutorial
-1. Add option to depend on [CaffeinaLab GCM](https://github.com/CaffeinaLab/GCM) or [Jeroen GCM](https://github.com/morinel/gcmpush) module.
+2. Parse.com example
+3. Wordpress self-hosted example
+4. APN Server API setup tutorial
+5. GCM Server API setup tutorial
+6. Add option to depend on [CaffeinaLab GCM](https://github.com/CaffeinaLab/GCM) or [Jeroen GCM](https://github.com/morinel/gcmpush) module.
 
 ### Credits
-This module is based on [ACS Push Notifications](https://github.com/ricardoalcocer/acspushmod) CommonJS module by my Ricardo Alcocer.
+1. This module is based on [ACS Push Notifications](https://github.com/ricardoalcocer/acspushmod) CommonJS module by my Ricardo Alcocer.
+
+## License
+This module built in my full-time @ [Rize Inno](https://github.com/RizeInno), code open source by Rize Innovations, FZO under MIT license.
