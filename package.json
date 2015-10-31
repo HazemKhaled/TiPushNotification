@@ -2,7 +2,7 @@
   "name": "TiPushNotification",
   "version": "0.1.1",
   "description": "Generic push notifications for both iOS and Android into Titanium apps",
-  "main": "./commonjs/TiPushNotification/0.1.1/TiPushNotification.js",
+  "main": "./index.js",
   "titaniumManifest": {
     "guid": "675edc6f-40d0-e30f-d14e-5e06923318e0",
     "moduleid": "ti-push-notification"
