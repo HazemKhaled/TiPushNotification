@@ -55,14 +55,11 @@ if (Ti.Platform.name === 'android') {
 // set cross-platform event
 var onReceive = function(event) {
   // Your code here
-}
+};
 
-// load library
-var TiPushFactory = require('TiPushNotification');
-
-// create instance with your own or the user's username and password
-var tiPush = new TiPushFactory.TiPush({
-  backendUrl: Alloy.CFG.api.url + "pnfw/register/"
+// Create instance with base url
+var tiPush = require('ti-push-notification').init({
+  backendUrl: "http://domain.tld/register.php"
 });
 
 // register this device
