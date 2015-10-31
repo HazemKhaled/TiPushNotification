@@ -1,6 +1,6 @@
 {
   "name": "TiPushNotification",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Generic push notifications for both iOS and Android into Titanium apps",
   "main": "./index.js",
   "titaniumManifest": {

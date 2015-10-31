@@ -94,7 +94,7 @@ tiPush.registerDevice({
 4- Configure your server with GCM and APN
 
 ### Contributions
-Your issues and pull requests are most welcome.
+Your issues and pull requests are most welcome, also you can pick a task from [TODOs](#todos).
 
 ### TODOs
 1. Server-side snippets for PHP and NodeJS
@@ -104,8 +104,15 @@ Your issues and pull requests are most welcome.
 5. GCM Server API setup tutorial
 6. Add option to depend on [CaffeinaLab GCM](https://github.com/CaffeinaLab/GCM) or [Jeroen GCM](https://github.com/morinel/gcmpush) module.
 
+### Changelog
+**v0.1.2**  
+Implementation changed, no need for factory, use init function directly Now module Titaniumified
+
+**v0.1.0**  
+Initialed base of [ACS Push Notifications](https://github.com/ricardoalcocer/acspushmod)
+
 ### Credits
-1. This module is based on [ACS Push Notifications](https://github.com/ricardoalcocer/acspushmod) CommonJS module by my Ricardo Alcocer.
+This module is based on [ACS Push Notifications](https://github.com/ricardoalcocer/acspushmod) CommonJS module by my Ricardo Alcocer.
 
 ## License
-This module built in my full-time @ [Rize Inno](https://github.com/RizeInno), code open source by Rize Innovations, FZO under MIT license.
+Original code written in my full-time @ [Rize Inno](https://github.com/RizeInno), code open source by Rize Innovations, FZO under MIT license.
