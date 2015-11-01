@@ -4,7 +4,7 @@ Yes you can use it with your self-hosted server or any other cloud services like
 ## Get it [![gitTio](http://gitt.io/badge.svg)](http://gitt.io/component/TiPushNotification)
 Download the latest distribution ZIP-file and consult the [Titanium Documentation](http://docs.appcelerator.com/titanium/latest/#!/guide/Using_a_Module) on how install it, or simply use the [gitTio CLI](http://gitt.io/cli):
 
-`$ gittio install TiPushNotification`
+`$ gittio install ti-push-notification`
 
 ## Prepare
 Titanium has APIs for iOS push notifications, but unfortunately you need module to for Android.
@@ -15,7 +15,7 @@ Titanium has APIs for iOS push notifications, but unfortunately you need module 
 
 2- Install this CommonJS module
 
-`$ gittio install TiPushNotification`
+`$ gittio install ti-push-notification`
 
 3- Add this code into your app.js or alloy.js
 
