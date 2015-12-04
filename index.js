@@ -56,7 +56,7 @@ TiPush.prototype.registerDevice = function(_prams) {
   }
 
   function receivePush(e) {
-    Ti.API.debug("[TiPush] onReceive Push callback =", JSON.stringify(event));
+    Ti.API.debug("[TiPush] onReceive Push callback =", JSON.stringify(e));
 
     if (IOS) {
       // Reset badge
