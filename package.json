@@ -1,0 +1,35 @@
+{
+  "name": "TiPushNotification",
+  "version": "0.1.2",
+  "description": "Generic push notifications for both iOS and Android into Titanium apps",
+  "main": "./index.js",
+  "titaniumManifest": {
+    "guid": "675edc6f-40d0-e30f-d14e-5e06923318e0",
+    "moduleid": "ti-push-notification"
+  },
+  "nativeDependencies": {
+    "nl.vanvianen.android.gcm": "^1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HazemKhaled/TiPushNotification.git"
+  },
+  "author": {
+    "name": "Hazem Khaled",
+    "email": "hazem.khaled@gmail.com",
+    "url": "http://about.me/hazemkhaled"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HazemKhaled/TiPushNotification/issues"
+  },
+  "homepage": "https://github.com/HazemKhaled/TiPushNotification",
+  "keywords": [
+    "titanium",
+    "titaniumifier",
+    "ios",
+    "android",
+    "gcm",
+    "apn"
+  ]
+}

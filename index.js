@@ -27,10 +27,10 @@ TiPush.prototype.registerDevice = function(_prams) {
 
   function deviceTokenSuccess(e) {
     if (ANDROID) {
-      Ti.API.debug('[TiPush] Device Token: ' + e.registrationId);
+      Ti.API.debug('[TiPush] Device Token:', e.registrationId);
       token = e.registrationId;
     } else if (IOS) {
-      Ti.API.debug('[TiPush] Device Token: ' + e.deviceToken);
+      Ti.API.debug('[TiPush] Device Token:', e.deviceToken);
       token = e.deviceToken;
     }
     that.token = token;
@@ -52,11 +52,11 @@ TiPush.prototype.registerDevice = function(_prams) {
   }
 
   function deviceTokenError(e) {
-    Ti.API.error('[TiPush] Token Error: ' + e.error);
+    Ti.API.error('[TiPush] Token Error:', e.error);
   }
 
   function receivePush(e) {
-    Ti.API.debug("[TiPush] onReceive Push callback = " + JSON.stringify(event));
+    Ti.API.debug("[TiPush] onReceive Push callback =", JSON.stringify(event));
 
     if (IOS) {
       // Reset badge
@@ -64,7 +64,7 @@ TiPush.prototype.registerDevice = function(_prams) {
     }
 
     onReceive(e.data);
-    Ti.API.debug("[TiPush] Push notification received: Module " + JSON.stringify(e.data));
+    Ti.API.debug("[TiPush] Push notification received: Module", JSON.stringify(e.data));
   }
 
   if (ANDROID) {
@@ -131,7 +131,7 @@ TiPush.prototype.registerDevice = function(_prams) {
     }
 
   } else {
-    Ti.API.warn("[TiPush] Push notification not implemented yet into acspushmod for " + Ti.Platform.osname);
+    Ti.API.warn("[TiPush] Push notification not implemented yet into TiPushNotification for", Ti.Platform.osname);
   }
 };
 
@@ -139,4 +139,6 @@ TiPush.prototype.getToken = function() {
   return this.token;
 };
 
-exports.TiPush = TiPush;
+exports.init = function(param) {
+  return new TiPush(param);
+};

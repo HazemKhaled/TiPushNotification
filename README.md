@@ -1,10 +1,10 @@
 # TiPushNotification
 Yes you can use it with your self-hosted server or any other cloud services like Parse.com or Appcelerator cloud.
 
-## Get it [![gitTio](http://gitt.io/badge.svg)](http://gitt.io/component/TiPushNotification)
+## Get it [![gitTio](http://gitt.io/badge.svg)](http://gitt.io/component/ti-push-notification)
 Download the latest distribution ZIP-file and consult the [Titanium Documentation](http://docs.appcelerator.com/titanium/latest/#!/guide/Using_a_Module) on how install it, or simply use the [gitTio CLI](http://gitt.io/cli):
 
-`$ gittio install TiPushNotification`
+`$ gittio install ti-push-notification`
 
 ## Prepare
 Titanium has APIs for iOS push notifications, but unfortunately you need module to for Android.
@@ -15,7 +15,7 @@ Titanium has APIs for iOS push notifications, but unfortunately you need module 
 
 2- Install this CommonJS module
 
-`$ gittio install TiPushNotification`
+`$ gittio install ti-push-notification`
 
 3- Add this code into your app.js or alloy.js
 
@@ -77,13 +77,10 @@ if (Ti.Platform.name === 'android') {
 // set cross-platform event
 var onReceive = function(event) {
   // Your code here
-}
+};
 
-// load library
-var TiPushFactory = require('TiPushNotification');
-
-// create instance with your own or the user's username and password
-var tiPush = new TiPushFactory.TiPush({
+// Create instance with base url
+var tiPush = require('ti-push-notification').init({
   backendUrl: "http://domain.tld/register.php"
 });
 
@@ -97,15 +94,25 @@ tiPush.registerDevice({
 4- Configure your server with GCM and APN
 
 ### Contributions
-Your issues and pull requests are most welcome.
+Your issues and pull requests are most welcome, also you can pick a task from [TODOs](#todos).
 
 ### TODOs
 1. Server-side snippets for PHP and NodeJS
-1. Parse.com example
-1. Wordpress self-hosted example
-1. APN Server API setup tutorial
-1. GCM Server API setup tutorial
-1. Add option to depend on [CaffeinaLab GCM](https://github.com/CaffeinaLab/GCM) or [Jeroen GCM](https://github.com/morinel/gcmpush) module.
+2. Parse.com example
+3. Wordpress self-hosted example
+4. APN Server API setup tutorial
+5. GCM Server API setup tutorial
+6. Add option to depend on [CaffeinaLab GCM](https://github.com/CaffeinaLab/GCM) or [Jeroen GCM](https://github.com/morinel/gcmpush) module.
+
+### Changelog
+**v0.1.2**  
+Implementation changed, no need for factory, use init function directly Now module Titaniumified
+
+**v0.1.0**  
+Initialed base of [ACS Push Notifications](https://github.com/ricardoalcocer/acspushmod)
 
 ### Credits
 This module is based on [ACS Push Notifications](https://github.com/ricardoalcocer/acspushmod) CommonJS module by my Ricardo Alcocer.
+
+## License
+Original code written in my full-time @ [Rize Inno](https://github.com/RizeInno), code open source by Rize Innovations, FZO under MIT license.
