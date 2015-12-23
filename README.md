@@ -2,22 +2,19 @@
 Yes you can use it with your self-hosted server or any other cloud services like Parse.com or Appcelerator cloud.
 
 ## Get it [![gitTio](http://gitt.io/badge.svg)](http://gitt.io/component/ti-push-notification)
-Download the latest distribution ZIP-file and consult the [Titanium Documentation](http://docs.appcelerator.com/titanium/latest/#!/guide/Using_a_Module) on how install it, or simply use the [gitTio CLI](http://gitt.io/cli):
+Download the latest distribution [ZIP-file](https://github.com/HazemKhaled/TiPushNotification/releases) with latest [Android GCM module](https://github.com/morinel/gcmpush) and consult the [Titanium Documentation](http://docs.appcelerator.com/titanium/latest/#!/guide/Using_a_Module) on how install it, or simply use the [gitTio CLI](http://gitt.io/cli):
 
 `$ gittio install ti-push-notification`
 
-## Prepare
+## How to
 Titanium has APIs for iOS push notifications, but unfortunately you need module to for Android.
+1. Install this CommonJS module
 
-1- Install GCM module by [Jeroen van Vianen](https://github.com/morinel/gcmpush)
+  _Note: [Android GCM module](https://github.com/morinel/gcmpush) will be installed automaticly_
 
-`$ gittio install nl.vanvianen.android.gcm`
+  `$ gittio install ti-push-notification`
 
-2- Install this CommonJS module
-
-`$ gittio install ti-push-notification`
-
-3- Add this code into your app.js or alloy.js
+2. Add this code into your app.js or alloy.js
 
 ```javascript
 if (Ti.Platform.name === 'android') {
@@ -91,8 +88,6 @@ tiPush.registerDevice({
 });
 ```
 
-4- Configure your server with GCM and APN
-
 ### Contributions
 Your issues and pull requests are most welcome, also you can pick a task from [TODOs](#todos).
 
@@ -105,11 +100,9 @@ Your issues and pull requests are most welcome, also you can pick a task from [T
 6. Add option to depend on [CaffeinaLab GCM](https://github.com/CaffeinaLab/GCM) or [Jeroen GCM](https://github.com/morinel/gcmpush) module.
 
 ### Changelog
-**v0.1.2**  
-Implementation changed, no need for factory, use init function directly Now module Titaniumified
+**v0.1.2**<br>Implementation changed, no need for factory, use init function directly Now module Titaniumified
 
-**v0.1.0**  
-Initialed base of [ACS Push Notifications](https://github.com/ricardoalcocer/acspushmod)
+**v0.1.0**<br>Initialed base of [ACS Push Notifications](https://github.com/ricardoalcocer/acspushmod)
 
 ### Credits
 This module is based on [ACS Push Notifications](https://github.com/ricardoalcocer/acspushmod) CommonJS module by my Ricardo Alcocer.
