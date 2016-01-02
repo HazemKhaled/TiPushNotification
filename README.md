@@ -84,7 +84,13 @@ var tiPush = require('ti-push-notification').init({
 // register this device
 tiPush.registerDevice({
   pnOptions: pnOptions,
-  onReceive: onReceive
+  onReceive: onReceive,
+  extraOptions: {
+    something: "a",
+    key2: true,
+    user_id: 1234,
+    whatever: "youwant"
+  }
 });
 ```
 
@@ -100,6 +106,8 @@ Your issues and pull requests are most welcome, also you can pick a task from [T
 6. Add option to depend on [CaffeinaLab GCM](https://github.com/CaffeinaLab/GCM) or [Jeroen GCM](https://github.com/morinel/gcmpush) module.
 
 ### Changelog
+**v0.1.3**<br>Add `extraOptions` parameter to be uploaded to backend too
+
 **v0.1.2**<br>Implementation changed, no need for factory, use init function directly Now module Titaniumified
 
 **v0.1.0**<br>Initialed base of [ACS Push Notifications](https://github.com/ricardoalcocer/acspushmod)

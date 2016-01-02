@@ -4,6 +4,9 @@
  *
  * @auther Hazem Khaled <hazem.khaled@gmail.com>
  */
+var Alloy = require("alloy")
+  , _ = require("alloy/underscore")._
+  ;
 
 var ANDROID = Ti.Platform.name === 'android',
   IOS = !ANDROID && (Ti.Platform.name === 'iPhone OS');
@@ -15,6 +18,7 @@ if (ANDROID) {
 function TiPush(e) {
   this.backendUrl = e.backendUrl;
   this.token = '';
+  this.os = (ANDROID) ? 'Android' : 'iOS';
 }
 
 TiPush.prototype.registerDevice = function(_prams) {
@@ -23,17 +27,29 @@ TiPush.prototype.registerDevice = function(_prams) {
     onReceive = _prams.onReceive,
     onStart = _prams.onStart || _prams.onReceive,
     onResume = _prams.onResume || _prams.onReceive,
-    pnOptions = _prams.pnOptions;
+    pnOptions = _prams.pnOptions,
+    extraOptions = _prams.extraOptions || {};
+
+  _.each(extraOptions, function(value, key){
+    that['' + key + ''] = value;
+  });
 
   function deviceTokenSuccess(e) {
     if (ANDROID) {
-      Ti.API.debug('[TiPush] Device Token:', e.registrationId);
+      console.log('[TiPush] Device Token:', e.registrationId);
       token = e.registrationId;
     } else if (IOS) {
-      Ti.API.debug('[TiPush] Device Token:', e.deviceToken);
+      console.log('[TiPush] Device Token:', e.deviceToken);
       token = e.deviceToken;
     }
     that.token = token;
+
+    var uploadParams = {};
+    _.each(that, function(value, key){
+      if(key != "backendUrl" && key != "getToken" && key != "registerDevice"){
+        uploadParams['' + key + ''] = value;
+      }
+    });
 
     var xhr = Ti.Network.createHTTPClient({
       onload: function() {
@@ -44,11 +60,7 @@ TiPush.prototype.registerDevice = function(_prams) {
       }
     });
     xhr.open("POST", that.backendUrl);
-    xhr.send({
-      token: token,
-      // Make sure os Capital letters
-      os: Ti.Platform.osname === 'android' ? 'Android' : 'iOS'
-    });
+    xhr.send(uploadParams);
   }
 
   function deviceTokenError(e) {
