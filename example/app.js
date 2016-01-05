@@ -65,5 +65,11 @@ var tiPush = require('ti-push-notification').init({
 // register this device
 tiPush.registerDevice({
   pnOptions: pnOptions,
-  onReceive: onReceive
+  onReceive: onReceive,
+  extraOptions: {
+    something: "a",
+    key2: true,
+    user_id: 1234,
+    whatever: "youwant"
+  }
 });
