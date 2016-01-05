@@ -4,10 +4,6 @@
  *
  * @auther Hazem Khaled <hazem.khaled@gmail.com>
  */
-var Alloy = require("alloy")
-  , _ = require("alloy/underscore")._
-  ;
-
 var ANDROID = Ti.Platform.name === 'android',
   IOS = !ANDROID && (Ti.Platform.name === 'iPhone OS');
 
@@ -30,26 +26,27 @@ TiPush.prototype.registerDevice = function(_prams) {
     pnOptions = _prams.pnOptions,
     extraOptions = _prams.extraOptions || {};
 
-  _.each(extraOptions, function(value, key){
-    that['' + key + ''] = value;
-  });
+  for (var key in extraOptions) {
+    that[key] = extraOptions[key];
+  }
 
   function deviceTokenSuccess(e) {
     if (ANDROID) {
-      console.log('[TiPush] Device Token:', e.registrationId);
+      Ti.API.debug('[TiPush] Device Token:', e.registrationId);
       token = e.registrationId;
     } else if (IOS) {
-      console.log('[TiPush] Device Token:', e.deviceToken);
+      Ti.API.debug('[TiPush] Device Token:', e.deviceToken);
       token = e.deviceToken;
     }
     that.token = token;
 
     var uploadParams = {};
-    _.each(that, function(value, key){
-      if(key != "backendUrl" && key != "getToken" && key != "registerDevice"){
-        uploadParams['' + key + ''] = value;
+
+    for (var key in that) {
+			if (['backendUrl', 'getToken', 'registerDevice'].indexOf(key) === -1) {
+        uploadParams[key] = that[key];
       }
-    });
+    }
 
     var xhr = Ti.Network.createHTTPClient({
       onload: function() {
