@@ -5,7 +5,7 @@
  * @auther Hazem Khaled <hazem.khaled@gmail.com>
  */
 var ANDROID = Ti.Platform.name === 'android',
-  IOS = !ANDROID && (Ti.Platform.name === 'iPhone OS');
+  IOS = Ti.Platform.name === 'iPhone OS' || Ti.Platform.name === 'iOS';
 
 if (ANDROID) {
   var GCM = require("nl.vanvianen.android.gcm");
